@@ -1,3 +1,6 @@
+Dominik Prokš
+#Úprava
+
 # Sociální síť
 domácí úkol z předmětu **vývoj webových aplikací**
 ## Odevzdání
