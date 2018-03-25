@@ -1,3 +1,4 @@
+Pomoc... To hovno prostě nefunguje
 Dominik Prokš
 #Úprava
 
