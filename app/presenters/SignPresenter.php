@@ -23,6 +23,7 @@ class SignPresenter extends Nette\Application\UI\Presenter
 	 */
 	protected function createComponentSignInForm(): Form
 	{
+
 		return $this->signInFactory->create(function () {
 			$this->redirect('Homepage:');
 		});
@@ -38,6 +39,7 @@ class SignPresenter extends Nette\Application\UI\Presenter
 	}
 	public function actionOut()
 	{
-		$this->getUser()->logout();
+        $this->getUser()->logout();
+        $this->redirect('Homepage:');
 	}
 }

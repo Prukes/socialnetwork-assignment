@@ -3,8 +3,13 @@
 namespace App\Presenters;
 
 use Nette;
+use Nette\Security\User;
 
 
-class HomepagePresenter extends Nette\Application\UI\Presenter
+class HomepagePresenter extends BasePresenter
 {
+
+
+
 }
+

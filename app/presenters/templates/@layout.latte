@@ -27,13 +27,22 @@
 						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
+						<a class="nav-link" n:href="Profile:">My Profile</a>
 					</li>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 				</form>
+                {if $user->isLoggedIn()}
+
+					<a n:href="Sign:Out" class="btn btn-outline-danger" role="button" aria-pressed="true">Odhlásit se</a>
+                {else}
+					<a n:href="Sign:up" class="btn btn-outline-secondary " role="button" aria-pressed="true">Vytvořit účet</a>
+					<a n:href="Sign:in" class="btn btn-outline-primary " role="button" aria-pressed="true">Přihlásit se</a>
+                {/if}
+
+
 			</div>
 		</nav>
 	</div>

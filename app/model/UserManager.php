@@ -23,7 +23,6 @@ class UserManager implements Nette\Security\IAuthenticator
 		COLUMN_EMAIL = 'email',
 		COLUMN_ROLE = 'role';
 
-
 	/** @var Nette\Database\Context */
 	private $database;
 
@@ -42,7 +41,7 @@ class UserManager implements Nette\Security\IAuthenticator
 	{
 		[$email, $password] = $credentials;
 
-		$row = $this->database->table(self::TABLE_EMAIL)
+		$row = $this->database->table(self::TABLE_NAME)
 			->where(self::COLUMN_EMAIL, $email)
 			->fetch();
 
@@ -71,9 +70,10 @@ class UserManager implements Nette\Security\IAuthenticator
 	public function add(string $email, string $password): void
 	{
 		try {
-			$this->database->table(self::TABLE_EMAIL)->insert([
+			$this->database->table(self::TABLE_NAME)->insert([
 				self::COLUMN_PASSWORD_HASH => Passwords::hash($password),
 				self::COLUMN_EMAIL => $email,
+                self::COLUMN_ROLE => 'pleb'
 			]);
 		} catch (Nette\Database\UniqueConstraintViolationException $e) {
 			throw new DuplicateNameException;

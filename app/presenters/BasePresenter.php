@@ -3,25 +3,30 @@
 namespace App\Presenters;
 
 use Nette;
-use Nette\Database\Context;
 use Nette\Security\User;
+use Nette\Database\Context;
 
-
-class ProfilePresenter extends BasePresenter
+class BasePresenter extends Nette\Application\UI\Presenter
 {
+
+    private $database;
     private $user;
+
+
     public function __construct(Context $database, User $user)
     {
-        parent::__construct($database, $user);
+        $this->database = $database;
         $this->user = $user;
+
     }
+
     public function beforeRender()
     {
-        if ($this->user->isInRole("administrator"))
-        {
 
-        }
+        $this->template->currentUser = $this->user->getIdentity();
+
     }
 
 
 }
+
