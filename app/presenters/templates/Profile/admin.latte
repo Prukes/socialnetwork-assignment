@@ -1,4 +1,4 @@
-{* This is the welcome page, you can delete it *}
+{block }
 
 {block content}
 <div class="row mb-2 profile">
@@ -8,12 +8,12 @@
                 <div class="profile-picture" style="background-image: url({$basePath}/img/profile-test-picture.jpg)"></div>
             </div>
             <div class="card-block">
-                <p class="card-text">Něco málo o mě</p>
+                <p class="card-text">Něco málo o plebovi jako jsi ty. </p>
             </div>
         </div>
     </div>
 </div>
-{foreach [1,2,3,4,5,6] as $item}
+{foreach $role as $item}
     <div class="row mb-1">
         <div class="col">
             <div class="card wall-post">
@@ -21,7 +21,7 @@
                     <div class="profile-header">
                         <div class="profile-img" style="background-image: url({$basePath}/img/profile-test-picture.jpg)"></div>
                         <div class="profile-name">
-                            Karel Gott
+
                         </div>
                     </div>
                 </div>

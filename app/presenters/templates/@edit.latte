@@ -26,16 +26,15 @@
 					<li class="nav-item active">
 						<a class="nav-link" n:href="Homepage:">Home <span class="sr-only">(current)</span></a>
 					</li>
-
+					<li class="nav-item">
 					{if $user->isInRole("administrator")}
-						<li class="nav-item"><a class="nav-link" n:href="Profile:Admin">My Profile</a></li>
-						<li class="nav-item"><a class="nav-link" n:href="Profile:Edit">Edit Profile</a></li>
+						<a class="nav-link" n:href="Profile:Admin">My Profile</a>
 					{else}{if $user->isLoggedIn()}
-						<li class="nav-item"><a class="nav-link" n:href="Profile:">My Profile</a></li>
-						<li class="nav-item"><a class="nav-link" n:href="Profile:Edit">Edit Profile</a></li>
+						<a class="nav-link" n:href="Profile:">My Profile</a>
+						<a class="nav-link" n:href="Profile:">My Profile</a>
 						{else}{/if}
 					{/if}
-
+					</li>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -61,7 +60,12 @@
                         Featured
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
+						<li class="list-group-item">
+							<form class="form-inline my-2 my-lg-0">
+								<input class="form-control mr-sm-2" type="text" placeholder="Zadejte nové jméno">
+								<button class="btn btn-outline-success my-1 my-sm-0" type="submit"><a n:href="Profile:editUsername ">změnit</a></button>
+							</form>
+						</li>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
